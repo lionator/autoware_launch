@@ -1,12 +1,14 @@
 name: Sync Fork
 
+# This runs every day on 1801 UTC
 on:
-  workflow_dispatch:
   schedule:
-  - cron: "0 0 * * *"
+    - cron: '1 18 * * *'
+  # Allows manual workflow run (must in default branch to work)
+  workflow_dispatch:
   
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
 
     steps:
