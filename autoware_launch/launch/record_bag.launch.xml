@@ -1,10 +1,15 @@
 <launch>
   <executable cmd="ros2 bag record 
-  /lanematching/velocity 
+  /lanematching/max_velocity 
+  /lanematching/curr_velocity 
   /lanematching/lanelet 
   /lanematching/markers 
   /map/vector_map_marker 
   /localization/kinematic_state
-  /vehicle/status/velocity_status" 
+  /lanematching/map_markers
+  /lanematching/lanelet_markers" 
   output="screen" />
+
+  <node pkg="hhn_launch" exec="conversion_record" name="conversion_record" output="screen"/>
+
 </launch>
